@@ -23,10 +23,7 @@ export default function TextForm(props) {
     setText(newwords.join(" "))
   }
 
-  const handleOnChange = (event) => {
-    // console.log("handleOnChange function was clicked")
-    setText(event.target.value)
-  }
+  
   const wordCount = () => {
     let result = text.trim().split(" ").includes('')
     if (result !== true) {
@@ -37,6 +34,11 @@ export default function TextForm(props) {
   }
   const handleClearClick = () => {
     setText("")
+  }
+
+  const handleOnChange = (event) => {
+    // console.log("handleOnChange function was clicked")
+    setText(event.target.value)
   }
 
   const [text, setText] = useState("");
