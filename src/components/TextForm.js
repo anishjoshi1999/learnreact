@@ -4,16 +4,20 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
   const handleUpClick = () => {
     // console.log("Uppercase function was clicked " + text)
+    props.showAlert(" Converted to Uppercase", "success")
     let newText = text.toUpperCase()
     setText(newText)
+  
   }
   const handleLoClick = () => {
     // console.log("Uppercase function was clicked " + text)
     let newText = text.toLowerCase()
     setText(newText)
+    props.showAlert(" Converted to Lowercase", "success")
   }
   const handleTitleClick = () => {
     // console.log("Uppercase function was clicked " + text)
+    props.showAlert(" Converted to Title Case","success")
     const words = text.trim().split(" ")
     const newwords = []
     for (let word of words) {
@@ -21,6 +25,7 @@ export default function TextForm(props) {
     }
 
     setText(newwords.join(" "))
+   
   }
 
 
@@ -36,9 +41,11 @@ export default function TextForm(props) {
     let text = document.getElementById("myBox")
     text.select()
     navigator.clipboard.writeText(text.value)
+    props.showAlert(" Copied","success")
   }
   const handleClearClick = () => {
     setText("")
+    props.showAlert(" Cleared","success")
   }
 
   const handleOnChange = (event) => {
