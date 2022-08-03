@@ -62,7 +62,7 @@ export default function TextForm(props) {
       <div style={{ color: props.mode === "dark" ? "white" : "black" }}>
         <div className="container" >
           <h2>{props.heading}</h2>
-          <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange} style={{ backgroundColor: props.mode === "dark" ? "grey" : "white" ,color: props.mode === "dark" ? "white" : "black"}} placeholder="Enter a text here"></textarea>
+          <textarea className={`form-control bg-${props.mode}`} id="myBox" rows="8" value={text} onChange={handleOnChange} style={{color: props.mode === "success" || props.mode === "primary" || props.mode === "warning" || props.mode === "dark"? "white" : "black"}} placeholder="Enter a text here"></textarea>
           <button className='btn btn-primary m-2' onClick={handleUpClick}>Covert to Uppercase</button>
           <button className='btn btn-success m-2' onClick={handleLoClick}>Covert to Lowercase</button>
           <button className='btn btn-warning m-2' onClick={handleTitleClick}>Covert to Titlecase</button>

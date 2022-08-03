@@ -2,7 +2,7 @@ import React from 'react'
 // import { ReactPropTypes } from 'react'
 export default function Navbar(props) {
   return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+    <nav className={`navbar navbar-expand-lg navbar-${props.mode === "light"?"light":"dark"} bg-${props.mode}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="/">{props.title}</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +21,21 @@ export default function Navbar(props) {
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-success" type="submit">Search</button>
         </form> */} 
+        <div className={`form-check form-switch text-${props.mode === "light"?"dark":"light"}`}>
+            <input className="form-check-input" type="checkbox" onClick={props.togglesMode.togglePrimaryMode} id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`PrimaryMode`}</label>
+          </div>
           <div className={`form-check form-switch text-${props.mode === "light"?"dark":"light"}`}>
-            <input className="form-check-input" type="checkbox" onClick={props.toggleMode} id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`${props.mode === "light"?"Enable":"Disable"} DarkMode`}</label>
+            <input className="form-check-input" type="checkbox" onClick={props.togglesMode.toggleSuccessMode} id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`SuccessMode`}</label>
+          </div>
+          <div className={`form-check form-switch text-${props.mode === "light"?"dark":"light"}`}>
+            <input className="form-check-input" type="checkbox" onClick={props.togglesMode.toggleWarningMode} id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`WarningMode`}</label>
+          </div>
+          <div className={`form-check form-switch text-${props.mode === "light"?"dark":"light"}`}>
+            <input className="form-check-input" type="checkbox" onClick={props.togglesMode.toggleMode} id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{`DarkMode`}</label>
           </div>
         </div>
       </div>
