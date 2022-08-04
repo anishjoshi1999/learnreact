@@ -26,10 +26,12 @@ function App() {
         setMode('dark')
         document.body.style.backgroundColor = 'grey'
         showAlert("Dark mode has been enabled", "dark")
+        document.title = 'TextUtilis - Dark Mode'
       }else{
         setMode('light')
         document.body.style.backgroundColor = 'white'
         showAlert("Light mode has been enabled", "light")
+        document.title = 'TextUtilis - Light Mode'
       }
     },
     togglePrimaryMode:() => {
@@ -37,10 +39,12 @@ function App() {
         setMode('primary')
         document.body.style.backgroundColor = '#add8e6'
         showAlert("Primary mode has been enabled", "primary")
+        document.title = 'TextUtilis - Primary Mode'
       }else{
         setMode('light')
         document.body.style.backgroundColor = 'white'
         showAlert("Light mode has been enabled", "light")
+        document.title = 'TextUtilis - Light Mode'
       }
     },
     toggleWarningMode:() => {
@@ -48,10 +52,12 @@ function App() {
         setMode('warning')
         document.body.style.backgroundColor = '#F0E68C'
         showAlert("Warning mode has been enabled", "warning")
+        document.title = 'TextUtilis - Warning Mode'
       }else{
         setMode('light')
         document.body.style.backgroundColor = 'white'
         showAlert("Light mode has been enabled", "light")
+        document.title = 'TextUtilis - Light Mode'
       }
     },
     toggleSuccessMode:() => {
@@ -59,10 +65,12 @@ function App() {
         setMode('success')
         document.body.style.backgroundColor = '#50C878'
         showAlert("Success mode has been enabled", "success")
+        document.title = 'TextUtilis - Success Mode'
       }else{
         setMode('light')
         document.body.style.backgroundColor = 'white'
         showAlert("Light mode has been enabled", "light")
+        document.title = 'TextUtilis - Light Mode'
       }
     }
   }
